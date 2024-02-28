@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "create_challenge_ios_app",
+            "cwd": "create_challenge_ios_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "create_challenge_ios_app (profile mode)",
+            "cwd": "create_challenge_ios_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "create_challenge_ios_app (release mode)",
+            "cwd": "create_challenge_ios_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
