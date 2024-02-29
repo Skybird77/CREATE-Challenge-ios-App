@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:create_challenge_ios_app/globals.dart' as globals;
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+class InfoCardPage extends StatelessWidget {
+  const InfoCardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
       backgroundColor: globals.backgroundColor,
         appBar: AppBar(
           title: Text(
-            "Settings",
+            "Info Card",
             style: TextStyle(
               color: globals.textColor,
               fontSize: 25,
