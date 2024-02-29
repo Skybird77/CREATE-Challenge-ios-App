@@ -31,6 +31,19 @@ class MessageSettingsPage extends StatelessWidget {
               ),
             )
         ),
+        body: Column(
+          children: <Widget>[
+            Center(
+              child: Text(
+                "Contacts",
+                style: TextStyle(
+                  fontSize: 40,
+                  color: globals.textColor,
+                )
+                ),
+            )
+          ],
+          )
     );
   }
 }
