@@ -29,11 +29,11 @@ class MessageSettingsPage extends StatelessWidget {
               icon: Icon(
                 Icons.arrow_back,
               ),
-            )
+            ),
         ),
         body: Column(
           children: <Widget>[
-            Center(
+            const Center(
               child: Text(
                 "Contacts",
                 style: TextStyle(
@@ -41,7 +41,44 @@ class MessageSettingsPage extends StatelessWidget {
                   color: globals.textColor,
                 )
                 ),
-            )
+            ),
+            Container(
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(3.0),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blueAccent)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text("This is a row of contacts"),
+                  IconButton(
+                    iconSize: 50,
+                    color: globals.textColor,
+                    onPressed: () {
+                       print("Add Contact");
+                    },
+                    icon: Icon(
+                      Icons.add,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const Center(
+              child: Text(
+                "Change Message",
+                style: TextStyle(
+                  fontSize: 40,
+                  color: globals.textColor,
+                )
+                ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: Text("Type message here"),
+            ),
+            //PUT ICON BUTTON HERE FOR SUBMIT
           ],
           )
     );
