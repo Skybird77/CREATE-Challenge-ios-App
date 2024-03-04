@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
                 Icons.menu,
               ),
             )
+            
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -58,7 +59,7 @@ class HomePage extends StatelessWidget {
                     shape: CircleBorder(),
                     fixedSize: Size(300, 300),
                     backgroundColor: globals.getPanicButtonColor,
-          
+                    padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                   )
                 ),
               ),
@@ -81,9 +82,12 @@ class HomePage extends StatelessWidget {
                     shape: CircleBorder(),
                     fixedSize: Size(pageIconSize, pageIconSize),
                     backgroundColor: globals.getMessageSettingsIconColor,
-          
+
                   )
                 ),
+                const Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 0.0),
+                    ),
                 ElevatedButton.icon(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -103,6 +107,17 @@ class HomePage extends StatelessWidget {
           
                   )
                 ),
+                const Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                    ),
+                ]
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 20.0),
+                    ),
                 ]
               ),
               Row(
@@ -127,6 +142,9 @@ class HomePage extends StatelessWidget {
           
                   )
                 ),
+                const Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 0.0),
+                    ),
                 ElevatedButton.icon(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
