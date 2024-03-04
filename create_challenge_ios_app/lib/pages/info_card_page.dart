@@ -8,21 +8,21 @@ class InfoCardPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: globals.backgroundColor,
+      backgroundColor: globals.getBackgroundColor,
         appBar: AppBar(
           title: Text(
             "Info Card",
             style: TextStyle(
-              color: globals.textColor,
+              color: globals.getTextColor,
               fontSize: 25,
               // fontWeight: FontWeight.bold,
             )),
-          backgroundColor: globals.ribbonColor,
+          backgroundColor: globals.getRibbonColor,
           elevation: 0,
           // leading: Icon(Icons.menu),
           leading: IconButton(
               iconSize: 50,
-              color: globals.textColor,
+              color: globals.getTextColor,
               onPressed: () {
                  Navigator.pop(context);
               },

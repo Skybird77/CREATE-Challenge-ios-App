@@ -16,21 +16,22 @@ class HomePage extends StatelessWidget {
     double pageIconSize = 175; //size of icons for pages
 
     return Scaffold(
-        backgroundColor: globals.backgroundColor,
+        backgroundColor: globals.getBackgroundColor,
+        resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: Text(
             "Home",
             style: TextStyle(
-              color: globals.textColor,
+              color: globals.getTextColor,
               fontSize: 25,
               // fontWeight: FontWeight.bold,
             )),
-          backgroundColor: globals.ribbonColor,
+          backgroundColor: globals.getRibbonColor,
           elevation: 0,
           // leading: Icon(Icons.menu),
           leading: IconButton(
               iconSize: 50,
-              color: globals.textColor,
+              color: globals.getTextColor,
               onPressed: () {
                  Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return const SettingsPage();
@@ -41,112 +42,114 @@ class HomePage extends StatelessWidget {
               ),
             )
         ),
-        body: Column(
-          children: <Widget>[
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: () {print("panic button");},
-                icon: Icon(
-                  Icons.spatial_audio_off,
-                  size: 100,
-                  color: globals.textColor
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Center(
+                child: ElevatedButton.icon(
+                  onPressed: () {print("panic button");},
+                  icon: Icon(
+                    Icons.spatial_audio_off,
+                    size: 100,
+                    color: globals.getTextColor
+                  ),
+                  label: const Text(''),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    fixedSize: Size(300, 300),
+                    backgroundColor: globals.getPanicButtonColor,
+          
+                  )
                 ),
-                label: Text(''),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  fixedSize: Size(300, 300),
-                  backgroundColor: globals.panicButtonColor,
-
-                )
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const MessageSettingsPageState();
+                   }));
+                  },
+                  icon: Icon(
+                    Icons.message,
+                    size: 100,
+                    color: globals.getTextColor
+                  ),
+                  label: Text(''),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    fixedSize: Size(pageIconSize, pageIconSize),
+                    backgroundColor: globals.getMessageSettingsIconColor,
+          
+                  )
+                ),
                 ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const MessageSettingsPage();
-                 }));
-                },
-                icon: Icon(
-                  Icons.message,
-                  size: 100,
-                  color: globals.textColor
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const InfoCardPage();
+                   }));
+                  },
+                  icon: Icon(
+                    Icons.question_mark,
+                    size: 100,
+                    color: globals.getTextColor
+                  ),
+                  label: Text(''),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    fixedSize: Size(pageIconSize, pageIconSize),
+                    backgroundColor: globals.getInfoCardIconColor,
+          
+                  )
                 ),
-                label: Text(''),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  fixedSize: Size(pageIconSize, pageIconSize),
-                  backgroundColor: globals.messageSettingsIconColor,
-
-                )
+                ]
               ),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const InfoCardPage();
-                 }));
-                },
-                icon: Icon(
-                  Icons.question_mark,
-                  size: 100,
-                  color: globals.textColor
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const HistoryPage();
+                   }));
+                  },
+                  icon: Icon(
+                    Icons.book,
+                    size: 100,
+                    color: globals.getTextColor
+                  ),
+                  label: Text(''),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    fixedSize: Size(pageIconSize, pageIconSize),
+                    backgroundColor: globals.getHistoryIconColor,
+          
+                  )
                 ),
-                label: Text(''),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  fixedSize: Size(pageIconSize, pageIconSize),
-                  backgroundColor: globals.infoCardIconColor,
-
-                )
-              ),
-              ]
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
                 ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const HistoryPage();
-                 }));
-                },
-                icon: Icon(
-                  Icons.book,
-                  size: 100,
-                  color: globals.textColor
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DataPage();
+                   }));
+                  },
+                  icon: Icon(
+                    Icons.show_chart,
+                    size: 100,
+                    color: globals.getTextColor
+                  ),
+                  label: Text(''),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    fixedSize: Size(pageIconSize, pageIconSize),
+                    backgroundColor: globals.getDataIconColor,
+          
+                  )
                 ),
-                label: Text(''),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  fixedSize: Size(pageIconSize, pageIconSize),
-                  backgroundColor: globals.historyIconColor,
-
-                )
+                ]
               ),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const DataPage();
-                 }));
-                },
-                icon: Icon(
-                  Icons.show_chart,
-                  size: 100,
-                  color: globals.textColor
-                ),
-                label: Text(''),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  fixedSize: Size(pageIconSize, pageIconSize),
-                  backgroundColor: globals.dataIconColor,
-
-                )
-              ),
-              ]
-            ),
-          ],
+            ],
+          ),
         )
       );
   }

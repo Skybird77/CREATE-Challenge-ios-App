@@ -1,28 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:create_challenge_ios_app/globals.dart' as globals;
 
-class MessageSettingsPage extends StatelessWidget {
-  const MessageSettingsPage({super.key});
+class MessageSettingsPageState extends StatefulWidget {
+  const MessageSettingsPageState({super.key});
 
   @override
+  __MessageSettingsPageStateState createState() => __MessageSettingsPageStateState();
+}
+
+class __MessageSettingsPageStateState extends State<MessageSettingsPageState> {
+  @override
   Widget build(BuildContext context) {
+    TextEditingController textFieldController = TextEditingController(text: globals.getMessageText);
+
+    @override
+    void initState() {
+      super.initState();
+      textFieldController = TextEditingController();
+    }
+
+    @override
+    void dispose() {
+      textFieldController.dispose();
+      super.dispose();
+    }
 
     return Scaffold(
-      backgroundColor: globals.backgroundColor,
+      backgroundColor: globals.getBackgroundColor,
         appBar: AppBar(
           title: Text(
             "Message Settings",
             style: TextStyle(
-              color: globals.textColor,
+              color: globals.getTextColor,
               fontSize: 25,
               // fontWeight: FontWeight.bold,
             )),
-          backgroundColor: globals.ribbonColor,
+          backgroundColor: globals.getRibbonColor,
           elevation: 0,
           // leading: Icon(Icons.menu),
           leading: IconButton(
               iconSize: 50,
-              color: globals.textColor,
+              color: globals.getTextColor,
               onPressed: () {
                  Navigator.pop(context);
               },
@@ -33,12 +51,12 @@ class MessageSettingsPage extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            const Center(
+            Center(
               child: Text(
                 "Contacts",
                 style: TextStyle(
                   fontSize: 40,
-                  color: globals.textColor,
+                  color: globals.getTextColor,
                 )
                 ),
             ),
@@ -54,7 +72,7 @@ class MessageSettingsPage extends StatelessWidget {
                   const Text("This is a row of contacts"),
                   IconButton(
                     iconSize: 50,
-                    color: globals.textColor,
+                    color: globals.getTextColor,
                     onPressed: () {
                        print("Add Contact");
                     },
@@ -65,18 +83,32 @@ class MessageSettingsPage extends StatelessWidget {
                 ],
               ),
             ),
-            const Center(
+            Center(
               child: Text(
                 "Change Message",
                 style: TextStyle(
                   fontSize: 40,
-                  color: globals.textColor,
+                  color: globals.getTextColor,
                 )
                 ),
             ),
             Container(
               alignment: Alignment.center,
-              child: Text("Type message here"),
+              width: 500,
+              decoration: BoxDecoration(
+                border: Border.all(width: 3)
+              ),
+              child: TextField(
+                textAlign: TextAlign.center,
+                controller: textFieldController,
+                decoration: null,
+                onSubmitted: (String value) async {
+                  setState(() { // If this doesn't set value on mobile, consider replacing this page with a form widget
+                    globals.setMessageText(value);
+                    print(globals.getMessageText);
+                  });
+                },
+              ),
             ),
             //PUT ICON BUTTON HERE FOR SUBMIT
           ],
@@ -84,3 +116,37 @@ class MessageSettingsPage extends StatelessWidget {
     );
   }
 }
+
+/*
+TextField(
+                textAlign: TextAlign.center,
+                controller: textFieldController,
+                decoration: null,
+                onSubmitted: (String value) async {
+                  setState(() {
+                    globals.messageText = value;
+                  });
+                },
+              ),
+              */
+
+              /*TextFormField(
+                textAlign: TextAlign.center,
+                autocorrect: true,
+                controller: textFieldController,
+                decoration: null,
+                onSaved: (String? value) {
+                  setState(() {
+                    if (value != null) {
+                      globals.messageText = value;
+                    }
+                  });
+                },
+                validator: (String? value) {
+                  if (value == null) {
+                    return("This field is required.");
+                  }
+                  return (value.length > 100 ? "The character limit is 100. (Currently ${value.length})" : null);
+                },
+              )
+              */
