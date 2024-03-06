@@ -44,7 +44,7 @@ class __MessageSettingsPageStateState extends State<MessageSettingsPageState> {
               onPressed: () {
                  Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
               ),
             ),
@@ -76,7 +76,7 @@ class __MessageSettingsPageStateState extends State<MessageSettingsPageState> {
                     onPressed: () {
                        print("Add Contact");
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add,
                     ),
                   )
@@ -99,7 +99,8 @@ class __MessageSettingsPageStateState extends State<MessageSettingsPageState> {
                 border: Border.all(width: 3)
               ),
               child: TextField(
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.start,
+                textAlignVertical: TextAlignVertical.top,
                 controller: textFieldController,
                 decoration: null,
                 onSubmitted: (String value) async {

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
-import 'pages/settings_page.dart';
+//import 'pages/settings_page.dart';
 import 'package:create_challenge_ios_app/globals.dart' as globals;
 
 void main() {
