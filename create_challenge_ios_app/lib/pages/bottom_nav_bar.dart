@@ -15,10 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
   static List<Widget> _pages = <Widget>[
-    Icon(
-      Icons.message,
-      size: 150,
-    ),
+    HomePage(),
     MyForm(),
     Icon(
       Icons.chat,

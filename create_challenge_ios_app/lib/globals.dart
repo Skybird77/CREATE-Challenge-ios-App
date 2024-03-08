@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 
+// potential color palette
+// https://coolors.co/palette/0d1b2a-1b263b-415a77-778da9-e0e1dd
+
   String _messageText = "I need help!"; // saved message to send to people
   List<Contact> _contacts = <Contact>[];
 

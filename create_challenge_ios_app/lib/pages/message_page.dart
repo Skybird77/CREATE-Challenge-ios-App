@@ -29,7 +29,7 @@ class _MyFormState extends State<MyForm> {
 
   List<Widget> getContacts() {
     List <Widget> contacts = <Widget>[];
-    Text text = const Text("Enter contacts here.");
+    Text text = const Text("Press + to add contacts");
 
     if (_contacts.isEmpty) {
       contacts.add(text);
