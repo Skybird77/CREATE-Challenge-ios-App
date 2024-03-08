@@ -2,8 +2,10 @@ library create_challenge_ios_app.globals;
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 
   String _messageText = "I need help!"; // saved message to send to people
+  List<Contact> _contacts = <Contact>[];
 
   Color _backgroundColor = Color(0xFFFFFFFF);
   Color _ribbonColor = Color(0xFFE9C9AA); //app bar at the top 
@@ -17,6 +19,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
   String get getMessageText => _messageText;
+  List<Contact> get getContacts => _contacts;
 
   Color get getBackgroundColor => _backgroundColor;
   Color get getRibbonColor => _ribbonColor;
@@ -32,7 +35,22 @@ import 'package:shared_preferences/shared_preferences.dart';
   Future<bool> setMessageText(value) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   _messageText = value;
-  return await sharedPreferences.setString("messageText", value);
+  return await sharedPreferences.setString('messageText', value);
+  }
+
+  Future<bool> setContacts(value) async {
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  _contacts = value;
+
+  List<String> contactsName = <String>[];
+  List<String> contactsNumber = <String>[];
+  value.forEach((contact) => {
+    contactsName.add(contact.fullName),
+    contactsNumber.add(contact.phoneNumbers[0]),
+  });
+
+  return await sharedPreferences.setStringList("contactsName", contactsName);
+  return await sharedPreferences.setStringList("contactsNumber", contactsNumber);
   }
 
   Future<bool> setBackgroundColor(value) async {
@@ -87,6 +105,8 @@ void initValues() async {
   // SharedPreferences.setMockInitialValues(
   //   {
   //     'messageText': "I really need help!",
+  //     'contactsName': ["John Doe", "Jane Doe"],
+  //     'contactsNumber': ["1234567891", "1234567891"],
   //     'backgroundColor': 0xFFFFFFFF,
   //     'ribbonColor': 0xffe9c9aa,
   //     'textColor': 0xFF000000,
@@ -100,7 +120,18 @@ void initValues() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
     _messageText = sharedPreferences.getString('messageText') ?? _messageText;
-    print(sharedPreferences.getString('messageText'));
+    
+    List<String> contactsName = sharedPreferences.getStringList("contactsName") ?? List<String>.empty();
+    List<String> contactsNumber = sharedPreferences.getStringList("contactsNumber") ?? List<String>.empty();
+    if (contactsName.length == contactsNumber.length) {
+      for (int i = 0; i < contactsName.length; i++) {
+        _contacts.add(Contact(fullName: contactsName[i], phoneNumbers: <String>[contactsNumber[i]]));
+      }
+    }
+    else {
+      print("Something wen't wrong while importing the saved contacts.");
+    }
+    print(_contacts);
     
     _backgroundColor = stringToColor(sharedPreferences.getInt('backgroundColor')) ?? _backgroundColor;
     _ribbonColor = stringToColor(sharedPreferences.getInt('ribbonColor')) ?? _ribbonColor;
@@ -111,6 +142,9 @@ void initValues() async {
     _infoCardIconColor = stringToColor(sharedPreferences.getInt('infoCardIconColor')) ?? _infoCardIconColor;
     _historyIconColor = stringToColor(sharedPreferences.getInt('historyIconColor')) ?? _historyIconColor;
     _dataIconColor = stringToColor(sharedPreferences.getInt('dataIconColor')) ?? _dataIconColor;
+
+  print(_messageText);
+  print(_contacts);
 
 }
 
