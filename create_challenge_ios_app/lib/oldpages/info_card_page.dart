@@ -26,7 +26,7 @@ class InfoCardPage extends StatelessWidget {
               onPressed: () {
                  Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
               ),
             )

@@ -56,8 +56,8 @@ class HomePage extends StatelessWidget {
                   ),
                   label: const Text(''),
                   style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    fixedSize: Size(300, 300),
+                    shape: const CircleBorder(),
+                    fixedSize: const Size(300, 300),
                     backgroundColor: globals.getPanicButtonColor,
                     padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                   )
@@ -77,9 +77,9 @@ class HomePage extends StatelessWidget {
                     size: 100,
                     color: globals.getTextColor
                   ),
-                  label: Text(''),
+                  label: const Text(''),
                   style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     fixedSize: Size(pageIconSize, pageIconSize),
                     backgroundColor: globals.getMessageSettingsIconColor,
 
@@ -99,9 +99,9 @@ class HomePage extends StatelessWidget {
                     size: 100,
                     color: globals.getTextColor
                   ),
-                  label: Text(''),
+                  label: const Text(''),
                   style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     fixedSize: Size(pageIconSize, pageIconSize),
                     backgroundColor: globals.getInfoCardIconColor,
           
@@ -134,9 +134,9 @@ class HomePage extends StatelessWidget {
                     size: 100,
                     color: globals.getTextColor
                   ),
-                  label: Text(''),
+                  label: const Text(''),
                   style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     fixedSize: Size(pageIconSize, pageIconSize),
                     backgroundColor: globals.getHistoryIconColor,
           
@@ -148,7 +148,7 @@ class HomePage extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DataPage();
+                    return const DataPage();
                    }));
                   },
                   icon: Icon(
@@ -156,9 +156,9 @@ class HomePage extends StatelessWidget {
                     size: 100,
                     color: globals.getTextColor
                   ),
-                  label: Text(''),
+                  label: const Text(''),
                   style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     fixedSize: Size(pageIconSize, pageIconSize),
                     backgroundColor: globals.getDataIconColor,
           

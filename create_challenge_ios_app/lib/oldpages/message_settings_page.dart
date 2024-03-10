@@ -44,7 +44,7 @@ class __MessageSettingsPageStateState extends State<MessageSettingsPageState> {
               onPressed: () {
                  Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
               ),
             ),
@@ -76,7 +76,7 @@ class __MessageSettingsPageStateState extends State<MessageSettingsPageState> {
                     onPressed: () {
                        print("Add Contact");
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add,
                     ),
                   )

@@ -10,15 +10,15 @@ import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart
   String _messageText = "I need help!"; // saved message to send to people
   List<Contact> _contacts = <Contact>[];
 
-  Color _backgroundColor = Color(0xFFFFFFFF);
-  Color _ribbonColor = Color(0xFFE9C9AA); //app bar at the top 
-  Color _textColor = Color(0xFF000000); 
-  Color _panicButtonColor = Color(0xFFF44336); // color of panic button on home 
+  Color _backgroundColor = const Color(0xFFFFFFFF);
+  Color _ribbonColor = const Color(0xFFE9C9AA); //app bar at the top 
+  Color _textColor = const Color(0xFF000000); 
+  Color _panicButtonColor = const Color(0xFFF44336); // color of panic button on home 
 
-  Color _messageSettingsIconColor = Color(0xFF8BC34A); //top left
-  Color _infoCardIconColor = Color(0xFF2196F3); // top right
-  Color _historyIconColor = Color(0xFFFF9800); // bottom left
-  Color _dataIconColor = Color(0xFFFFC107); // bottom right
+  Color _messageSettingsIconColor = const Color(0xFF8BC34A); //top left
+  Color _infoCardIconColor = const Color(0xFF2196F3); // top right
+  Color _historyIconColor = const Color(0xFFFF9800); // bottom left
+  Color _dataIconColor = const Color(0xFFFFC107); // bottom right
 
 
   String get getMessageText => _messageText;
@@ -52,8 +52,9 @@ import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart
     contactsNumber.add(contact.phoneNumbers[0]),
   });
 
-  return await sharedPreferences.setStringList("contactsName", contactsName);
-  return await sharedPreferences.setStringList("contactsNumber", contactsNumber);
+  await sharedPreferences.setStringList("contactsName", contactsName);
+  await sharedPreferences.setStringList("contactsNumber", contactsNumber);
+  return true;
   }
 
   Future<bool> setBackgroundColor(value) async {
@@ -119,6 +120,9 @@ void initValues() async {
   //     'historyIconColor': 0xFFFF9800,
   //     'dataIconColor': 0xFFFFC107,
   //   });
+
+
+
 
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 

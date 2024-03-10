@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:create_challenge_ios_app/pages/home_page.dart';
 import 'package:create_challenge_ios_app/pages/message_page.dart';
-import 'package:create_challenge_ios_app/globals.dart' as globals;
 
 
 class BottomNavBar extends StatefulWidget {
@@ -14,18 +13,18 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
-  static List<Widget> _pages = <Widget>[
-    HomePage(),
-    MyForm(),
-    Icon(
+  static final List<Widget> _pages = <Widget>[
+    const HomePage(),
+    const MyForm(),
+    const Icon(
       Icons.chat,
       size: 150,
     ),
-    Icon(
+    const Icon(
       Icons.chat,
       size: 150,
     ),
-    Icon(
+    const Icon(
       Icons.chat,
       size: 150,
     ),
@@ -56,8 +55,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _pages.elementAt(_selectedIndex),
+      body: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Center(
+          child: _pages.elementAt(_selectedIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

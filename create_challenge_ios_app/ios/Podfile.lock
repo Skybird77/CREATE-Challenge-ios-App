@@ -1,0 +1,41 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_native_contact_picker (0.0.1):
+    - Flutter
+  - flutter_sms (1.1.0):
+    - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - url_launcher_ios (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_native_contact_picker (from `.symlinks/plugins/flutter_native_contact_picker/ios`)
+  - flutter_sms (from `.symlinks/plugins/flutter_sms/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_native_contact_picker:
+    :path: ".symlinks/plugins/flutter_native_contact_picker/ios"
+  flutter_sms:
+    :path: ".symlinks/plugins/flutter_sms/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_native_contact_picker: bd430ba0fbf82768bb50c2c52a69a65759a8f907
+  flutter_sms: 91ce41530f55c85d6524d82307a5d555844c086a
+  shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
+  url_launcher_ios: 6116280ddcfe98ab8820085d8d76ae7449447586
+
+PODFILE CHECKSUM: 5dae552ec7a270e601f5aff8daae6457f610020d
+
+COCOAPODS: 1.15.2

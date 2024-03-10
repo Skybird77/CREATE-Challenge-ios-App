@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:create_challenge_ios_app/globals.dart' as globals;
 import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 
-class MyForm extends StatefulWidget { 
+class MyForm extends StatefulWidget {
+  const MyForm({super.key});
+ 
   @override 
   _MyFormState createState() => _MyFormState(); 
 } 
@@ -11,7 +13,7 @@ class MyForm extends StatefulWidget {
 class _MyFormState extends State<MyForm> { 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _message = globals.getMessageText;
-  List<Contact> _contacts = globals.getContacts;
+  final List<Contact> _contacts = globals.getContacts;
   final FlutterContactPicker _contactPicker = FlutterContactPicker();
   
   
@@ -24,6 +26,8 @@ class _MyFormState extends State<MyForm> {
         globals.setContacts(_contacts);
       });
       print("submiot");
+      print(_message);
+      print(_contacts);
     } 
   }
 
@@ -38,7 +42,7 @@ class _MyFormState extends State<MyForm> {
       contacts.remove(text);
     }
 
-    _contacts.forEach((element) {
+    for (var element in _contacts) {
       contacts.add(Row(children: [
         Text(element.fullName!),
         IconButton(
@@ -47,12 +51,12 @@ class _MyFormState extends State<MyForm> {
           hoverColor: Colors.red[900],
           onPressed: () {
             setState(() {
-              _contacts.removeAt(_contacts.indexWhere((contact) => _contacts == element.fullName));
+              _contacts.removeAt(_contacts.indexWhere((contact) => contact.fullName == element.fullName));
             });
           },
         )
         ],));
-    });
+    }
     return contacts; 
     }
   
@@ -93,7 +97,7 @@ class _MyFormState extends State<MyForm> {
                     ]
                   );
                 },
-                validator: (string){ // Validation for contacts doesn't show but still should work.
+                validator: (string){ // Validation for contacts doesn't show but still checks
                   if (_contacts.isEmpty) {
                     return 'Please choose an emergency contact.';
                   }
@@ -112,13 +116,13 @@ class _MyFormState extends State<MyForm> {
                   return null;
                 }, 
                 onSaved: (value) { 
-                  globals.setMessageText(value);
+                  _message = value ?? _message;
                 }, 
               ), 
-              SizedBox(height: 20.0), 
+              const SizedBox(height: 20.0), 
               ElevatedButton( 
                 onPressed: _submitForm,
-                child: Text('Save'),
+                child: const Text('Save'),
               ), 
             ], 
           ), 
