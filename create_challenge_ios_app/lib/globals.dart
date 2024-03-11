@@ -8,7 +8,8 @@ import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart
 // https://coolors.co/palette/0d1b2a-1b263b-415a77-778da9-e0e1dd
 
   String _messageText = "I need help!"; // saved message to send to people
-  List<Contact> _contacts = <Contact>[];
+  String _InfoText = "I am Katie.";
+List<Contact> _contacts = <Contact>[];
 
   Color _backgroundColor = const Color(0xFFFFFFFF);
   Color _ribbonColor = const Color(0xFFE9C9AA); //app bar at the top 
@@ -22,7 +23,8 @@ import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart
 
 
   String get getMessageText => _messageText;
-  List<Contact> get getContacts => _contacts;
+  String get getInfoText => _InfoText;
+List<Contact> get getContacts => _contacts;
 
   Color get getBackgroundColor => _backgroundColor;
   Color get getRibbonColor => _ribbonColor;
@@ -39,7 +41,13 @@ import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   _messageText = value;
   return await sharedPreferences.setString('messageText', value);
-  }
+}
+
+Future<bool> setInfoText(value) async {
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  _InfoText = value;
+  return await sharedPreferences.setString('messageText', value);
+}
 
   Future<bool> setContacts(value) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
@@ -109,7 +117,7 @@ void initValues() async {
   // SharedPreferences.setMockInitialValues(
   //   {
   //     'messageText': "I really need help!",
-  //     'contactsName': ["John Doe", "Jane Doe"],
+//     'contactsName': ["John Doe", "Jane Doe"],
   //     'contactsNumber': ["1234567891", "1234567891"],
   //     'backgroundColor': 0xFFFFFFFF,
   //     'ribbonColor': 0xffe9c9aa,
@@ -127,6 +135,7 @@ void initValues() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
     _messageText = sharedPreferences.getString('messageText') ?? _messageText;
+    _InfoText = sharedPreferences.getString('InfoText') ?? _InfoText;
     
     List<String> contactsName = sharedPreferences.getStringList("contactsName") ?? List<String>.empty();
     List<String> contactsNumber = sharedPreferences.getStringList("contactsNumber") ?? List<String>.empty();
@@ -150,7 +159,7 @@ void initValues() async {
     _historyIconColor = stringToColor(sharedPreferences.getInt('historyIconColor')) ?? _historyIconColor;
     _dataIconColor = stringToColor(sharedPreferences.getInt('dataIconColor')) ?? _dataIconColor;
 
-  print(_messageText);
+print(_messageText);
   print(_contacts);
 
 }

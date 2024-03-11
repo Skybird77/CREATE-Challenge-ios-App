@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:create_challenge_ios_app/globals.dart' as globals;
 import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 
-class MyForm extends StatefulWidget {
-  const MyForm({super.key});
+class MessageForm extends StatefulWidget {
+  const MessageForm({super.key});
  
   @override 
-  _MyFormState createState() => _MyFormState(); 
+  _MessageFormState createState() => _MessageFormState(); 
 } 
   
-class _MyFormState extends State<MyForm> { 
+class _MessageFormState extends State<MessageForm> { 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _message = globals.getMessageText;
   final List<Contact> _contacts = globals.getContacts;

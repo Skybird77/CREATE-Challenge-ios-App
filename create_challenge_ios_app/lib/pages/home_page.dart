@@ -10,8 +10,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double pageIconSize = 175; //size of icons for pages
-
     return Scaffold(
         backgroundColor: globals.getBackgroundColor,
         resizeToAvoidBottomInset: true,
@@ -31,7 +29,6 @@ class HomePage extends StatelessWidget {
                     shape: const CircleBorder(),
                     fixedSize: const Size(500, 500),
                     backgroundColor: globals.getPanicButtonColor,
-                    padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                   )
                 ),
               ),
