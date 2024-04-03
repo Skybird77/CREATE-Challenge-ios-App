@@ -1,0 +1,4 @@
+#Fri Mar 08 01:15:06 CST 2024
+base.0=C\:\\Users\\spenc\\Documents\\GitHub\\CREATE-Challenge-ios-App\\create_challenge_ios_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

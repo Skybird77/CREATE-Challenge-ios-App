@@ -1,0 +1,10 @@
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/CMakeFiles/INSTALL.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/CMakeFiles/ALL_BUILD.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/CMakeFiles/ZERO_CHECK.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/flutter/CMakeFiles/INSTALL.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/runner/CMakeFiles/create_challenge_ios_app.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/runner/CMakeFiles/INSTALL.dir
+C:/Users/spenc/Documents/GitHub/CREATE-Challenge-ios-App/create_challenge_ios_app/build/windows/x64/runner/CMakeFiles/ALL_BUILD.dir
